@@ -1,14 +1,13 @@
 import { Sequelize } from 'sequelize-typescript';
-import Musician from './models/musician';
-import Schedule from './models/schedule';
-import Service from './models/service';
-import MusicianService from './models/musicianService';
+import EnergySourceBreakdown from './models/energy_source_breakdown';
+import Metadata from './models/metadata';
+import SmartMeter from './models/smart_meter';
 import { environment } from '../environment/environment';
 
 const sequelize = new Sequelize({
   dialect: 'sqlite',
   storage: environment.sqlite.storage,
-  models: [Musician, Schedule, Service, MusicianService],
+  models: [EnergySourceBreakdown, Metadata, SmartMeter],
   logging: false,
 });
 

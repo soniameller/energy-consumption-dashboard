@@ -1,9 +1,19 @@
-import { Table, Column, Model, DataType } from 'sequelize-typescript';
+import {
+  Table,
+  Column,
+  Model,
+  DataType,
+  ForeignKey,
+  BelongsTo,
+  PrimaryKey,
+  AutoIncrement,
+} from 'sequelize-typescript';
+import Metadata from './metadata';
 
 @Table({
-  timestamps: true,
   tableName: 'smart_meter',
   modelName: 'SmartMeter',
+  timestamps: false,
 })
 export default class SmartMeter extends Model {
   @Column({
@@ -12,11 +22,15 @@ export default class SmartMeter extends Model {
   })
   declare timestamp: Date;
 
+  @ForeignKey(() => Metadata)
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
   declare cpe: string;
+
+  @BelongsTo(() => Metadata)
+  metadata: Metadata;
 
   @Column({
     type: DataType.FLOAT,

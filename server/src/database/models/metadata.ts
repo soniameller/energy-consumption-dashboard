@@ -3,17 +3,27 @@ import {
   Column,
   Model,
   DataType,
+  AutoIncrement,
+  PrimaryKey,
+  HasMany,
 } from 'sequelize-typescript';
+import SmartMeter from './smart_meter';
 
 @Table({
-  timestamps: true,
   tableName: 'metadata',
   modelName: 'Metadata',
+  timestamps: false,
 })
 export default class Metadata extends Model {
+  @AutoIncrement
+  @Column(DataType.INTEGER)
+  declare id: number;
+
+  @PrimaryKey
   @Column({
     type: DataType.STRING,
     allowNull: false,
+    unique: true,
   })
   declare cpe: string;
 
@@ -46,4 +56,7 @@ export default class Metadata extends Model {
     allowNull: false,
   })
   declare fulladdress: string;
+
+  @HasMany(() => SmartMeter)
+  smartMeter: SmartMeter[];
 }

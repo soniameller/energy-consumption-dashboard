@@ -1,9 +1,9 @@
 import { Table, Column, Model, DataType } from 'sequelize-typescript';
 
 @Table({
-  timestamps: true,
   tableName: 'energy_source_breakdown',
   modelName: 'EnergySourceBreakdown',
+  timestamps: false,
 })
 export default class EnergySourceBreakdown extends Model {
   @Column({
