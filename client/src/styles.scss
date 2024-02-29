@@ -1,1 +1,135 @@
 /* You can add global styles to this file, and also import other style files */
+
+$primary-color: #f27b77;
+// Apply a natural box layout model to all elements, including before and after pseudo-elements
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+// Reset margins, paddings, and borders for a comprehensive list of elements
+// Also set font properties to inherit by default and apply baseline vertical alignment
+// Improve text rendering and disable text size adjustment for a consistent experience across devices
+html,
+body,
+div,
+span,
+object,
+iframe,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+code,
+em,
+img,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+b,
+u,
+i,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+main,
+canvas,
+embed,
+footer,
+header,
+nav,
+section,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+
+// Remove text decoration and other undesired styles from links
+a {
+  text-decoration: none; // Removes underline from links
+  color: inherit; // Ensures links use the inherited text color, not browser default colors
+  &:hover {
+    text-decoration: none;
+    color: $primary-color;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+// Ensure HTML5 elements display as block by default
+footer,
+header,
+nav,
+section,
+main {
+  display: block;
+}
+
+// Set default line-height for the body to normalize across browsers
+body {
+  line-height: 1;
+  font-family: 'poppins-extralight,poppins,sans-serif';
+}
+
+// Remove list styles from ordered and unordered lists for easier customization
+ol,
+ul {
+  list-style: none;
+}
+
+// Remove default quotes for blockquote and q elements
+blockquote,
+q {
+  quotes: none;
+}
+
+// Remove the content of before and after pseudo-elements for quotes, negating default browser styles
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+// Ensure tables use border-collapse and have no border spacing for consistent table layout
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// Style adjustments for input elements to remove default browser appearances and ensure consistent styling
+input {
+  -webkit-appearance: none; // Address appearance for WebKit browsers
+  border-radius: 0; // Remove default border-radius for a flat design
+}
